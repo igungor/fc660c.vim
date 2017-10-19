@@ -7,8 +7,10 @@ let g:colors_name="fc660c"
 let s:palette = {}
 let s:palette.fg      = [0,   "#000000"]
 let s:palette.bg      = [15,  "#f6f6f0"]
-let s:palette.red     = [15,  "#c04c62"]
+let s:palette.red     = [15,  "#c04c52"]
+let s:palette.blue    = [15,  "#add8e6"]
 let s:palette.grey    = [244, "#656565"]
+let s:palette.brightgrey  = [244, "#657b83"]
 let s:palette.yellow  = [230, "#ffffcf"]
 let s:palette.brightyellow  = [230, "#ffff00"]
 
@@ -107,28 +109,28 @@ call s:HL('Cursor', s:palette.bg, s:palette.grey, 'none')
 call s:HL('CursorColumn', s:palette.fg, s:palette.grey, 'none')
 "  CursorColumn    the screen column that the cursor is in when 'cursorcolumn' is set
 
-call s:HL('CursorLine', s:palette.fg, s:palette.grey, 'none')
+call s:HL('CursorLine', s:palette.fg, s:palette.yellow, 'none')
 "  CursorLine      the screen line that the cursor is in when 'cursorline' is set
 
 call s:HL('Directory', s:palette.fg, s:palette.bg, 'bold')
 "  Directory       directory names (and other special names in listings)
 
-hi DiffAdd         ctermfg=0   ctermbg=187
+call s:HL('DiffAdd', s:palette.fg, s:palette.blue, 'none')
 "  DiffAdd         diff mode: Added line
 
 call s:HL('DiffChange', s:palette.fg, s:palette.bg, 'none')
 "  DiffChange      diff mode: Changed line
 
-call s:HL('DiffDelete', s:palette.fg, s:palette.bg, 'none')
+call s:HL('DiffDelete', s:palette.bg, s:palette.red, 'none')
 "  DiffDelete      diff mode: Deleted line
 
 call s:HL('DiffText', s:palette.fg, s:palette.yellow, 'none')
 "  DiffText        diff mode: Changed text within a changed line
 
-call s:HL('ErrorMsg', s:palette.fg, s:palette.bg, 'bold')
+call s:HL('ErrorMsg', s:palette.bg, s:palette.red, 'bold')
 "  ErrorMsg        error messages on the command line
 
-call s:HL('VertSplit', s:palette.fg, s:palette.bg, 'bold')
+call s:HL('VertSplit', s:palette.red, s:palette.bg, 'none')
 "  VertSplit       the column separating vertically split windows
 
 call s:HL('Folded', s:palette.bg, s:palette.grey, 'none')
@@ -166,16 +168,16 @@ call s:HL('NonText', s:palette.grey, s:palette.bg, 'none')
 "                  (e.g., ">" displayed when a double-wide character doesn't
 "                  fit at the end of the line).
 
-call s:HL('Pmenu', s:palette.fg, s:palette.yellow, 'none')
+call s:HL('Pmenu', s:palette.bg, s:palette.brightgrey, 'none')
 "  Pmenu           popup menu: normal item.
 
-call s:HL('PmenuSel', s:palette.yellow, s:palette.fg, 'none')
+call s:HL('PmenuSel', s:palette.fg, s:palette.bg, 'none')
 "  PmenuSel        popup menu: selected item.
 
-call s:HL('PmenuSbar', s:palette.fg, s:palette.grey, 'none')
+call s:HL('PmenuSbar', s:palette.fg, s:palette.brightgrey, 'none')
 "  PmenuSbar       popup menu: scrollbar.
 
-call s:HL('PmenuThumb', s:palette.bg, s:palette.fg, 'none')
+call s:HL('PmenuThumb', s:palette.fg, s:palette.red, 'none')
 "  PmenuThumb      popup menu: Thumb of the scrollbar.
 
 call s:HL('Question', s:palette.fg, s:palette.bg, 'bold')
@@ -185,6 +187,8 @@ call s:HL('Search', s:palette.fg, s:palette.brightyellow, 'none')
 "  Search          last search pattern highlighting
 "                  Also used for highlighting the current line in the quickfix
 "                  window and similar items that need to stand out.
+"
+call s:HL('QuickFixLine', s:palette.fg, s:palette.blue, 'none')
 
 call s:HL('SpecialKey', s:palette.fg, s:palette.bg, 'none')
 "  SpecialKey      meta and special keys listed with ":map", also for text used
@@ -192,28 +196,28 @@ call s:HL('SpecialKey', s:palette.fg, s:palette.bg, 'none')
 "                  Generally: text that is displayed differently from what it
 "                  really is.
 
-call s:HL('SpellBad', s:palette.fg, s:palette.yellow, 'underline')
+call s:HL('SpellBad', s:palette.fg, s:palette.bg, 'underline')
 "  SpellBad        Word that is not recognized by the spellchecker.
 "                  This will be combined with the highlighting used otherwise.
 
-call s:HL('SpellCap', s:palette.fg, s:palette.yellow, 'underline')
+call s:HL('SpellCap', s:palette.fg, s:palette.bg, 'underline')
 " SpellCap         Word that should start with a capital.
 "                  This will be combined with the highlighting used otherwise.
 
-call s:HL('SpellLocal', s:palette.fg, s:palette.yellow, 'underline')
+call s:HL('SpellLocal', s:palette.fg, s:palette.bg, 'underline')
 "  SpellLocal      Word that is recognized by the spellchecker as one that is
 "                  used in another region. This will be combined with the
 "                  highlighting used otherwise.
 
-call s:HL('SpellRare', s:palette.fg, s:palette.yellow, 'underline')
+call s:HL('SpellRare', s:palette.fg, s:palette.blue, 'none')
 "  SpellRare       Word that is recognized by the spellchecker as one that is
 "                  hardly ever used. This will be combined with the
 "                  highlighting used otherwise.
 
-call s:HL('StatusLine', s:palette.grey, s:palette.bg, 'none')
+call s:HL('StatusLine', s:palette.fg, s:palette.bg, 'none')
 "  StatusLine      status line of current window
 
-call s:HL('StatusLineNC', s:palette.fg, s:palette.bg, 'none')
+call s:HL('StatusLineNC', s:palette.brightgrey, s:palette.bg, 'none')
 "  StatusLineNC    status lines of not-current windows
 "                  Note: if this is equal to "StatusLine" Vim will use "^^^" in
 "                  the status line of the current window.
@@ -240,14 +244,14 @@ call s:HL('WildMenu', s:palette.fg, s:palette.yellow, 'bold')
 "  WildMenu        current match in 'wildmenu' completion
 
 """ Statusline
-call s:HL('User1', s:palette.bg, s:palette.red, 'bold')
+call s:HL('User1', s:palette.bg, s:palette.brightgrey, 'bold')
 call s:HL('User2', s:palette.grey, s:palette.bg, 'bold')
-call s:HL('User3', s:palette.grey, s:palette.yellow, 'none')
-call s:HL('User4', s:palette.grey, s:palette.bg, 'none')
-call s:HL('User5', s:palette.grey, s:palette.bg, 'none')
-call s:HL('User6', s:palette.grey, s:palette.bg, 'none')
-call s:HL('User7', s:palette.fg, s:palette.grey, 'none')
-call s:HL('User8', s:palette.grey, s:palette.yellow, 'bold')
+call s:HL('User3', s:palette.grey, s:palette.yellow, 'bold')
+call s:HL('User4', s:palette.fg, s:palette.bg, 'none')
+call s:HL('User5', s:palette.grey, s:palette.bg, 'bold')
+call s:HL('User6', s:palette.grey, s:palette.bg, 'bold')
+call s:HL('User7', s:palette.fg, s:palette.brightgrey, 'bold')
+call s:HL('User8', s:palette.bg, s:palette.brightgrey, 'bold')
 call s:HL('User9', s:palette.yellow, s:palette.grey, 'bold')
 
 """ C
