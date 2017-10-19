@@ -89,7 +89,7 @@ call s:HL('Ignore', s:palette.fg, s:palette.fg, 'none')
 call s:HL('Error', s:palette.fg, s:palette.bg, 'none')
 " *Error           any erroneous construct
 
-call s:HL('Todo', s:palette.bg, s:palette.grey, 'none')
+call s:HL('Todo', s:palette.bg, s:palette.red, 'none')
 " *Todo            anything that needs extra attention; mostly the
 "                  keywords TODO,FIXME and XXX
 
@@ -254,7 +254,7 @@ call s:HL('User9', s:palette.yellow, s:palette.grey, 'bold')
 call s:HL('cPreCondit', s:palette.fg, s:palette.bg, 'bold')
 
 """ vim-sneak
-call s:HL('Sneak', s:palette.yellow, s:palette.yellow, 'none')
-call s:HL('SneakScope', s:palette.fg, s:palette.yellow, 'bold')
-call s:HL('SneakLabel', s:palette.fg, s:palette.yellow, 'bold')
-call s:HL('SneakLabelMask', s:palette.fg, s:palette.yellow, 'bold')
+call s:HL('Sneak', s:palette.bg, s:palette.red, 'bold')
+call s:HL('SneakScope', s:palette.bg, s:palette.red, 'bold')
+call s:HL('SneakLabel', s:palette.bg, s:palette.red, 'bold')
+call s:HL('SneakLabelMask', s:palette.bg, s:palette.red, 'bold')
