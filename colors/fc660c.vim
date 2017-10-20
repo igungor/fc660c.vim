@@ -5,14 +5,14 @@ endif
 let g:colors_name="fc660c"
 
 let s:palette = {}
-let s:palette.fg      = [0,   "#000000"]
-let s:palette.bg      = [15,  "#f6f6f0"]
-let s:palette.red     = [15,  "#c04c52"]
-let s:palette.blue    = [15,  "#add8e6"]
-let s:palette.grey    = [244, "#656565"]
-let s:palette.brightgrey  = [244, "#657b83"]
-let s:palette.yellow  = [230, "#ffffcf"]
-let s:palette.brightyellow  = [230, "#ffff00"]
+let s:palette.fg           = [0, "#000000"]
+let s:palette.bg           = [7, "#f6f6f0"]
+let s:palette.red          = [1, "#c04c52"]
+let s:palette.blue         = [12, "#add8e6"]
+let s:palette.grey         = [8, "#656565"]
+let s:palette.brightgrey   = [4, "#657b83"]
+let s:palette.yellow       = [3, "#ffffcf"]
+let s:palette.brightyellow = [11, "#ffff00"]
 
 " HL is a helper function to generate highlight commands based on cterm/gui
 " etc.
